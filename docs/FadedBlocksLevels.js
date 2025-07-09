@@ -288,9 +288,7 @@ function level5() {
     canvasContext.font = "15px Arial";
     canvasContext.fillText("press enter to play a game",360,320);
     if (keys.enter) {
-        if (player.y <= 0) {
-            keys.up = false;
-        }
+
     renderScreen();
     finalPlayer(10,0,10,200,5);
     finalAI();
@@ -305,6 +303,9 @@ function level5() {
             keys.enter = false;
         }
 
+    }
+    if (player.y <= 0 && keys.up == true) {
+        keys.up = false;
     }
     }
 };
