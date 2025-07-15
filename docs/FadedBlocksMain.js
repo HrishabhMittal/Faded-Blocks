@@ -107,15 +107,19 @@ function keyup(event) {
             keys.up=false;
             break;
         case 37:
+        case 65:
             keys.left=false;
             break;
         case 38:
+        case 87:
             keys.up=false;
             break;
         case 39:
+        case 68:
             keys.right=false;
             break;
         case 40:
+        case 83:
             keys.down=false;
             break;
     }
