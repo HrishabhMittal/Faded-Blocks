@@ -83,15 +83,19 @@ function keydown(event) {
             keys.up=true;
             break;
         case 37:
+        case 65:
             keys.left=true;
             break;
         case 38:
+        case 87:
             keys.up=true;
             break;
         case 39:
+        case 68:
             keys.right=true;
             break;
         case 40:
+        case 83:
             keys.down=true;
             break;
     }
