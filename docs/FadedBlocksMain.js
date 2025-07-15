@@ -53,7 +53,7 @@ var canvas = document.getElementById("canvas");
 var canvasContext=canvas.getContext("2d");
 let levelcache = localStorage.getItem("levels");
 let x=JSON.parse(levelcache);
-if (x.one!=undefined) {
+if (x!=null && x.one!=undefined) {
     level=x;
 } else {
     localStorage.clear();
