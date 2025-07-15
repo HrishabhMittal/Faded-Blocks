@@ -51,34 +51,69 @@ var points = {
 }
 var canvas = document.getElementById("canvas");
 var canvasContext=canvas.getContext("2d");
+let levelcache = localStorage.getItem("levels");
+let x=JSON.parse(levelcache);
+if (x.one!=undefined) {
+    level=x;
+} else {
+    localStorage.clear();
+}
+
+
+
 document.addEventListener("keydown",keydown);
 document.addEventListener("keyup",keyup);
 setInterval(renderLevel,1000/fps);
-
+var lastLevel=0;
 function renderLevel() {
     if (level.zero && level.one == false) {
         level1();
+        if (lastLevel!=1) {
+            lastLevel=1;
+            localStorage.setItem("levels",JSON.stringify(level));
+        } 
     }
     if (level.one && level.two == false) {
         level2();
+        if (lastLevel!=2) {
+            lastLevel=2;
+            localStorage.setItem("levels",JSON.stringify(level));
+        } 
     }
     if (level.two && level.three == false) {
         level3();
+        if (lastLevel!=3) {
+            lastLevel=3;
+            localStorage.setItem("levels",JSON.stringify(level));
+        } 
     }
     if (level.three && level.four == false) {
         level4();
+        if (lastLevel!=4) {
+            lastLevel=4;
+            localStorage.setItem("levels",JSON.stringify(level));
+        } 
     }
     if (level.four && level.five == false) {
         level5();
+        if (lastLevel!=5) {
+            lastLevel=5;
+            localStorage.setItem("levels",JSON.stringify(level));
+        } 
     }
     if (level.five) {
         end();
+        if (lastLevel!=6) {
+            lastLevel=6;
+            localStorage.setItem("levels",JSON.stringify(level));
+        } 
     }
 };
 function keydown(event) {
     switch (event.keyCode) {
         case 13:
             keys.enter=true;
+            break;
         case 32:
             keys.up=true;
             break;
